@@ -57,14 +57,14 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
       {/* Google Analytics */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-LV1LN9VBT0"
+        src="https://www.googletagmanager.com/gtag/js?id=G-4TCX3DDF7V"
         strategy="afterInteractive"
       ></Script>
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
            function gtag(){dataLayer.push(arguments);}
            gtag('js', new Date());
-           gtag('config', 'G-LV1LN9VBT0')`}
+           gtag('config', 'G-4TCX3DDF7V')`}
         ;
       </Script>
 
