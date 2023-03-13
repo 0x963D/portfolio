@@ -15,7 +15,7 @@ export default function ExperienceCard({ experience }: Props) {
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
         className=" md:invisible xl:visible md:h-0 w-28 h-28 md:w-0 rounded-full xl:w-[150px] xl:h-[150px] mb-2 object-cover object-center"
-        //src={urlFor(experience?.companyImage).url()}
+        src={urlFor(experience?.companyImage).url()}
         alt=""
       />
       <div className="w-full px-0 md:px-10">
@@ -44,7 +44,7 @@ export default function ExperienceCard({ experience }: Props) {
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
             className="invisible md:visible xl:invisible xl:h-0 xl:w-0 h-0 w-0 md:h-28 md:w-28  rounded-full mb-0 object-cover object-center"
-            //src={urlFor(experience?.companyImage).url()}
+            src={urlFor(experience?.companyImage).url()}
             alt=""
           />
         </div>
