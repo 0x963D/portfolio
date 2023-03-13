@@ -31,7 +31,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
     <div
       className="bg-lightBackground text-darkBlack h-screen snap-y snap-mandatory
-    overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
+    overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGold/80"
     >
       <Head>
         <link
@@ -52,7 +52,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <title>{"Mitch's Portfolio"}</title>
+        <title>{"Dan's Portfolio"}</title>
       </Head>
 
       {/* Google Analytics */}
@@ -104,7 +104,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
-            <div className="h-10 w-10 bg-darkGreen/80 rounded-full flex items-center justify-center">
+            <div className="h-10 w-10 bg-darkGold/80 rounded-full flex items-center justify-center">
               <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-white animate-pulse" />
             </div>
           </div>

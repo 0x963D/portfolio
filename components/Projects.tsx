@@ -17,7 +17,7 @@ export default function Projects({ projects }: Props) {
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGold/80">
         {projects?.map((project, i) => (
           <div
             key={project._id}
@@ -29,13 +29,13 @@ export default function Projects({ projects }: Props) {
               transition={{ duration: 1.2 }}
               viewport={{ once: true }}
               className=" h-28 xl:h-80 md:h-72 object-contain"
-              //src={urlFor(project?.image).url()}
+              src={urlFor(project?.image).url()}
               alt=""
             />
 
             <div className="space-y-5 md:space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-lg md:text-2xl lg:text-4xl font-semibold text-center">
-                <span className="underline decoration-darkGreen/50">
+                <span className="underline decoration-darkGold/50">
                   Project {i + 1}:
                 </span>{" "}
                 {project?.title}
@@ -45,7 +45,7 @@ export default function Projects({ projects }: Props) {
                   <img
                     key={technology._id}
                     className="h-10 w-10 rounded-full object-cover"
-                    //src={urlFor(technology?.image).url()}
+                    src={urlFor(technology?.image).url()}
                     alt=""
                   />
                 ))}
@@ -59,7 +59,7 @@ export default function Projects({ projects }: Props) {
         ))}
       </div>
 
-      <div className="w-full absolute top-[20%] md:top-[30%] bg-darkGreen/40 left-0 h-[500px] -skew-y-12"></div>
+      <div className="w-full absolute top-[20%] md:top-[30%] bg-darkGold/40 left-0 h-[500px] -skew-y-12"></div>
     </motion.div>
   );
 }
