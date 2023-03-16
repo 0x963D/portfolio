@@ -2,7 +2,7 @@
 
 I wanted to learn more about Next JS, Typescript, Framer Motion and Tailwind and so I used my portfolio website as an opportunity to do this. The website was originally inspired by a YouTube video by Sonny Sangha, and over time has morphed into something I am quite proud of. The portfolio uses Sanity as backend, so that it can update the information without rebuilding the application.
 
-Want to see it in action? You can find the website [here](https://mitchellsparrow.com)!
+Want to see it in action? You can find the website [here](https://danvdoca.vercel.app)!
 
 # Next JS:
 
