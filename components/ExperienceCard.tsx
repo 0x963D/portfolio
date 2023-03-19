@@ -1,12 +1,35 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { urlFor } from "../sanity";
 import { Experience } from "../typings";
 
 type Props = { experience: Experience };
 
 export default function ExperienceCard({ experience }: Props) {
+  const [maxIcons, setMaxIcons] = useState(5);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setMaxIcons(5);
+      } else if (window.innerWidth < 1280) {
+        setMaxIcons(8);
+      } else {
+        setMaxIcons(13);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const visibleTechnologies = experience?.technologies.slice(0, maxIcons);
+
   return (
     <article className=" flex drop-shadow-xl flex-col rounded-3xl items-center space-y-0 flex-shrink-0 w-72  md:w-[600px] xl:w-[700px] snap-center bg-[#FFFFFF] bg-gradient-to-tr from-white  to-darkGold/20 p-5 md:p10 hover:opacity-100 opacity-100 cursor-pointer transition-opacity duration-200 ">
       <motion.img
@@ -14,7 +37,7 @@ export default function ExperienceCard({ experience }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
-        className="md:invisible xl:visible md:h-0 w-28 h-28 md:w-0 rounded-full xl:w-[150px] xl:h-[150px] mb-2 object-cover object-center"
+        className=" md:invisible xl:visible md:h-0 w-28 h-28 md:w-0 rounded-full xl:w-[150px] xl:h-[150px] mb-2 object-cover object-center"
         src={urlFor(experience?.companyImage).url()}
         alt=""
       />
@@ -28,14 +51,14 @@ export default function ExperienceCard({ experience }: Props) {
               {experience?.company}
             </p>
             <div className="flex space-x-2 my-2">
-              {experience?.technologies.map((technology) => (
+              {visibleTechnologies.map((technology) => (
                 <Image
                   key={technology._id}
                   className="h-10 w-10 rounded-full object-cover"
                   src={urlFor(technology?.image).url()}
                   alt=""
                   width={180}
-                  height={180}
+                  height={1840}
                 />
               ))}
             </div>
