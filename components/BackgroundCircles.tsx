@@ -35,7 +35,7 @@ export default function BackgroundCircles({}: Props) {
       />
       <div />
       <div
-        className="absolute border border-darkGold opacity-20 h-[510px] w-[510px] md:h-[650px] md:w-[650px] 
+        className="absolute border border-darkGold opacity-20 h-[550px] w-[550px] md:h-[655px] md:w-[655px] 
             animate-pulse mt-64 md:mt:52 rounded-full"
       />
       <div />

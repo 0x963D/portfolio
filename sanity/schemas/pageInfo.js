@@ -4,6 +4,11 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'cv',
+      title: 'CV',
+      type: 'file',
+    },
+    {
       name: 'name',
       title: 'Name',
       type: 'string',
@@ -25,7 +30,7 @@ export default {
       name: 'backgroundInformation',
       title: 'BackgroundInformation',
       type: 'string',
-    }, 
+    },
     {
       name: 'profilePic',
       title: 'ProfilePic',
@@ -47,15 +52,13 @@ export default {
     {
       name: 'address',
       title: 'Address',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'socials',
       title: 'Socials',
       type: 'array',
-      of: [{type: 'reference', to: { type: 'social'}}]
-    }
+      of: [{type: 'reference', to: {type: 'social'}}],
+    },
   ],
-
- 
 }

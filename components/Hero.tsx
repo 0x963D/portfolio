@@ -54,6 +54,12 @@ export default function Hero({ pageInfo }: Props) {
           <Link href="#projects">
             <button className="heroButton">Projects</button>
           </Link>
+          <Link
+            href="https://cdn.sanity.io/files/n3tx052x/production/1754cb3afda633f63e2701af88adc29298a8582a.pdf?dl"
+            download="Dan-Doca-CVEN"
+          >
+            <button className="heroButton">CV</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
+import { LinkIcon } from "@heroicons/react/24/outline";
 
 type Props = { projects: Project[] };
 
