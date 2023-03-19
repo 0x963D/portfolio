@@ -14,7 +14,7 @@ export default function ExperienceCard({ experience }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
-        className=" md:invisible xl:visible md:h-0 w-28 h-28 md:w-0 rounded-full xl:w-[150px] xl:h-[150px] mb-2 object-cover object-center"
+        className="md:invisible xl:visible md:h-0 w-28 h-28 md:w-0 rounded-full xl:w-[150px] xl:h-[150px] mb-2 object-cover object-center"
         src={urlFor(experience?.companyImage).url()}
         alt=""
       />
@@ -29,11 +29,13 @@ export default function ExperienceCard({ experience }: Props) {
             </p>
             <div className="flex space-x-2 my-2">
               {experience?.technologies.map((technology) => (
-                <img
+                <Image
                   key={technology._id}
                   className="h-10 w-10 rounded-full object-cover"
                   src={urlFor(technology?.image).url()}
                   alt=""
+                  width={180}
+                  height={180}
                 />
               ))}
             </div>

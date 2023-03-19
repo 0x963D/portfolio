@@ -30,25 +30,32 @@ export default function Projects({ projects }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2 }}
               viewport={{ once: true }}
-              className=" h-28 xl:h-80 md:h-72 object-contain"
+              className="h-28 xl:h-80 md:h-72 object-contain"
               src={urlFor(project?.image).url()}
               alt=""
             />
 
             <div className="space-y-5 md:space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-lg md:text-2xl lg:text-4xl font-semibold text-center">
-                <span className="underline decoration-darkGold/50">
-                  Project {i + 1}:
-                </span>{" "}
-                {project?.title}
-              </h4>
+              <div className="flex items-center space-x-2 justify-center ">
+                <h4 className="text-lg md:text-2xl lg:text-4xl font-semibold">
+                  <span className="underline decoration-darkGold/50">
+                    Project {i + 1}:
+                  </span>{" "}
+                  {project?.title}
+                </h4>
+                <a href={project?.linkToBuild} target="_blank" rel="noreferrer">
+                  <LinkIcon className="h-6 w-6" />
+                </a>
+              </div>
               <div className="flex items-center space-x-2 justify-center ">
                 {project?.technologies.map((technology) => (
-                  <img
+                  <Image
                     key={technology._id}
                     className="h-10 w-10 rounded-full object-cover"
                     src={urlFor(technology?.image).url()}
                     alt=""
+                    width={3360}
+                    height={1676}
                   />
                 ))}
               </div>
