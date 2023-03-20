@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
 import { LinkIcon } from "@heroicons/react/24/outline";
@@ -8,6 +8,35 @@ import { LinkIcon } from "@heroicons/react/24/outline";
 type Props = { projects: Project[] };
 
 export default function Projects({ projects }: Props) {
+  const [maxIcons, setMaxIcons] = useState(18);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 280) {
+        setMaxIcons(5);
+      } else if (window.innerWidth <= 320) {
+        setMaxIcons(6);
+      } else if (window.innerWidth <= 375) {
+        setMaxIcons(7);
+      } else if (window.innerWidth <= 425) {
+        setMaxIcons(8);
+      } else if (window.innerWidth <= 540) {
+        setMaxIcons(10);
+      } else if (window.innerWidth <= 768) {
+        setMaxIcons(13);
+      } else {
+        setMaxIcons(18);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -48,7 +77,7 @@ export default function Projects({ projects }: Props) {
                 </a>
               </div>
               <div className="flex items-center space-x-2 justify-center ">
-                {project?.technologies.map((technology) => (
+                {project?.technologies.slice(0, maxIcons).map((technology) => (
                   <Image
                     key={technology._id}
                     className="h-10 w-10 rounded-full object-cover"

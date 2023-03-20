@@ -7,7 +7,7 @@ import { Experience } from "../typings";
 type Props = { experience: Experience };
 
 export default function ExperienceCard({ experience }: Props) {
-  const [maxIcons, setMaxIcons] = useState(5);
+  const [maxIcons, setMaxIcons] = useState(13);
 
   useEffect(() => {
     const handleResize = () => {
